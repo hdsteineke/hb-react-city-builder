@@ -19,13 +19,19 @@ function App() {
   // finally, you'll need an array of slogans, which could start out as ['The City of Excellence'] for example
   const [slogans, setSlogans] = useState(['']);
 
+  function handleCityName(e) {
+    setCityName(e.target.value);
+  }
+
   return (
     <div className="App">
       {/* here, the City component takes in skylineId, waterfrontId, castleId as props. It'll use those ids to render pictures correctly. */}
       <City skylineId={skylineId} waterfrontId={waterfrontId} castleId={castleId} />
       <h1>
         {/* dynamically update the city name here using state */}
-        Welcome to beautiful Portland!
+
+        Welcome to beautiful {cityName}!
+        <CityNameInput handleCityName={handleCityName} />
       </h1>
       <div className='bottom'>
         {/* here, the CityNameInput component takes in the setCityName state handler function */}
