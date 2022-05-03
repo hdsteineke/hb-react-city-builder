@@ -1,5 +1,4 @@
 import React from 'react';
-import sloganInput from './SloganForm';
 
 export default function Slogan({ slogan }) {
   return (
